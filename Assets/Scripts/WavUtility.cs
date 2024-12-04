@@ -27,6 +27,31 @@ public class WavUtility
 	/// </summary>
 	/// <returns>The AudioClip.</returns>
 	/// <param name="filePath">Local file path to .wav file</param>
+
+	public static byte[] AudioClipToByteArray(AudioClip clip)
+	{
+			if (clip == null)
+			{
+					Debug.LogError("Audio clip is null.");
+					return null;
+			}
+
+			float[] samples = new float[clip.samples * clip.channels];
+			clip.GetData(samples, 0);
+
+			byte[] pcmData = new byte[samples.Length * 2];
+			int rescaleFactor = 32767; // Convert to PCM 16-bit
+
+			for (int i = 0; i < samples.Length; i++)
+			{
+					short pcmSample = (short)(samples[i] * rescaleFactor);
+					pcmData[i * 2] = (byte)(pcmSample & 0xFF);
+					pcmData[i * 2 + 1] = (byte)((pcmSample >> 8) & 0xFF);
+			}
+
+			return pcmData;
+	}
+
 	public static AudioClip ToAudioClip (string filePath)
 	{
 		if (!filePath.StartsWith (Application.persistentDataPath) && !filePath.StartsWith (Application.dataPath)) {

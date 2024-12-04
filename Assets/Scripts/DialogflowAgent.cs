@@ -3,6 +3,7 @@ using Google.Protobuf;
 using System;
 using UnityEngine;
 using Google.Api.Gax.Grpc.Rest;
+using System.Threading.Tasks;
 
 public class DialogflowAgent : MonoBehaviour
 {
@@ -15,36 +16,46 @@ public class DialogflowAgent : MonoBehaviour
     private const string location = "us-central1"; // e.g., "us-central1"
     private const string agentId = "099a192a-c879-4a51-a4c4-d8e58602e73f";
 
+    private const string dificultad="dificil";//facil,intermedio o dificil
     private bool isClientInitialized = false;
 
     private void Awake()
     {
-        sessionId = Guid.NewGuid().ToString(); // Generate a unique session ID
+        ResetSession();
 
         string credentialsPath = "C:/Users/angel/Documents/GoogleCloudServiceAccount/therapfisi-entrevista-de--nlos-37f963fe34f7.json";
         System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentialsPath);
         Debug.Log(System.Environment.GetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS"));
     }
 
-    private void Start()
+private void Start()
+{
+    InitializeAgent();
+}
+private async void InitializeAgent()
+{
+    try
     {
-        try
+        sessionsClient = new SessionsClientBuilder
         {
-            sessionsClient = new SessionsClientBuilder
-            {
-                GrpcAdapter = RestGrpcAdapter.Default, // Configure REST transport
-                Endpoint = "us-central1-dialogflow.googleapis.com"
-            }.Build();
-            isClientInitialized = true;
-            Debug.Log("SessionsClient initialized successfully.");
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError($"Error initializing SessionsClient: {ex.Message}");
-        }
-    }
+            GrpcAdapter = RestGrpcAdapter.Default, // Configure REST transport
+            Endpoint = "us-central1-dialogflow.googleapis.com"
+        }.Build();
 
-    public async void SendMessageToDialogflow(string userMessage)
+        isClientInitialized = true;
+        Debug.Log("SessionsClient initialized successfully.");
+
+        // Optionally, test with an initial message
+        await SendMessageToDialogflow("Hola",false);
+        await SendMessageToDialogflow(dificultad,true);
+    }
+    catch (Exception ex)
+    {
+        Debug.LogError($"Error initializing SessionsClient: {ex.Message}");
+    }
+}
+
+    public async Task SendMessageToDialogflow(string userMessage, bool returnAudio)
     {
         if (!isClientInitialized)
         {
@@ -90,7 +101,7 @@ public class DialogflowAgent : MonoBehaviour
             Debug.Log("Texto de la respuesta: " + responseText);
 
             // Play the audio response if it's available
-            if (response.OutputAudio.Length > 0)
+            if (response.OutputAudio.Length > 0&&returnAudio)
             {
                 byte[] audioBytes = response.OutputAudio.ToByteArray();
 
@@ -104,5 +115,79 @@ public class DialogflowAgent : MonoBehaviour
         {
             Debug.LogError($"Error en DetectIntent: {ex.Message}");
         }
+    }
+
+    public async void SendAudioToDialogflow(byte[] audioData)
+    {
+        if (!isClientInitialized)
+        {
+            Debug.LogError("SessionsClient is not initialized.");
+            return;
+        }
+
+        // Create the session name
+        SessionName sessionName = SessionName.FromProjectLocationAgentSession(projectId, location, agentId, sessionId);
+
+        // Create the query input with audio configuration
+        QueryInput queryInput = new QueryInput
+        {
+            Audio = new AudioInput
+            {
+                Config = new InputAudioConfig
+                {
+                    AudioEncoding = AudioEncoding.Linear16, // PCM 16-bit format
+                    SampleRateHertz = 16000               // Set to your audio's sample rate
+                },
+                Audio = Google.Protobuf.ByteString.CopyFrom(audioData)
+            },
+            LanguageCode = "es"
+        };
+
+        // Optional: Configure audio response
+        OutputAudioConfig audioConfig = new OutputAudioConfig
+        {
+            AudioEncoding = OutputAudioEncoding.Linear16,
+            SampleRateHertz = 16000
+        };
+
+        // Prepare the DetectIntentRequest
+        DetectIntentRequest request = new DetectIntentRequest
+        {
+            SessionAsSessionName = sessionName,
+            QueryInput = queryInput,
+            OutputAudioConfig = audioConfig
+        };
+
+        try
+        {
+            // Make the request to Dialogflow CX
+            DetectIntentResponse response = await sessionsClient.DetectIntentAsync(request);
+
+            // Get the text response from the bot
+            string responseText = string.Join(" ", response.QueryResult.ResponseMessages[0].Text.Text_);
+            Debug.Log("Texto de la respuesta: " + responseText);
+
+            // Play the audio response if it's available
+            if (response.OutputAudio.Length > 0)
+            {
+                byte[] responseAudioBytes = response.OutputAudio.ToByteArray();
+
+                // Convert the audio to Unity AudioClip (requires a WavUtility script)
+                AudioClip audioClip = WavUtility.ToAudioClip(responseAudioBytes, audioConfig.SampleRateHertz);
+                audioSource.clip = audioClip;
+                audioSource.Play();
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Error en DetectIntent: {ex.Message}");
+        }
+    }
+
+    public void ResetSession()
+    {
+        // Generate a new session ID for a fresh conversation
+        sessionId = Guid.NewGuid().ToString();
+        Debug.Log($"Session reset. New session ID: {sessionId}");
     }
 }
