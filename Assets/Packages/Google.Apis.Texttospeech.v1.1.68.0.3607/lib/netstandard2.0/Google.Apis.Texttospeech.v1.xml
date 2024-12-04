@@ -1,0 +1,882 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Texttospeech.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Texttospeech.v1.TexttospeechService">
+            <summary>The Texttospeech Service.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TexttospeechService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TexttospeechService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.BatchUri">
+            <summary>Gets the batch base URI; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.BatchPath">
+            <summary>Gets the batch base path; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.TexttospeechService.Scope">
+            <summary>Available OAuth 2.0 scopes for use with the Cloud Text-to-Speech API.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechService.Scope.CloudPlatform">
+            <summary>
+            See, edit, configure, and delete your Google Cloud data and see the email address for your Google
+            Account.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.TexttospeechService.ScopeConstants">
+            <summary>Available OAuth 2.0 scope constants for use with the Cloud Text-to-Speech API.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechService.ScopeConstants.CloudPlatform">
+            <summary>
+            See, edit, configure, and delete your Google Cloud data and see the email address for your Google
+            Account.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.Operations">
+            <summary>Gets the Operations resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.Projects">
+            <summary>Gets the Projects resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.Text">
+            <summary>Gets the Text resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechService.Voices">
+            <summary>Gets the Voices resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1">
+            <summary>A base abstract class for Texttospeech requests.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new TexttospeechBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.Alt">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.Key">
+            <summary>
+            API key. Your API key identifies your project and provides you with API access, quota, and reports. Required
+            unless you provide an OAuth 2.0 token.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.QuotaUser">
+            <summary>
+            Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a
+            user, but should not exceed 40 characters.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TexttospeechBaseServiceRequest`1.InitParameters">
+            <summary>Initializes Texttospeech parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.OperationsResource">
+            <summary>The "operations" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.OperationsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.Cancel(Google.Apis.Texttospeech.v1.Data.CancelOperationRequest,System.String)">
+            <summary>
+            Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the
+            operation, but success is not guaranteed. If the server doesn't support this method, it returns
+            `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether
+            the cancellation succeeded or whether the operation completed despite cancellation. On successful
+            cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value
+            with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
+            </summary>
+            <param name="body">The body of the request.</param>
+            <param name="name">The name of the operation resource to be cancelled.</param>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest">
+            <summary>
+            Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the
+            operation, but success is not guaranteed. If the server doesn't support this method, it returns
+            `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether
+            the cancellation succeeded or whether the operation completed despite cancellation. On successful
+            cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value
+            with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Texttospeech.v1.Data.CancelOperationRequest,System.String)">
+            <summary>Constructs a new Cancel request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.Name">
+            <summary>The name of the operation resource to be cancelled.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.CancelRequest.InitParameters">
+            <summary>Initializes Cancel parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.Delete(System.String)">
+            <summary>
+            Deletes a long-running operation. This method indicates that the client is no longer interested in the
+            operation result. It does not cancel the operation. If the server doesn't support this method, it returns
+            `google.rpc.Code.UNIMPLEMENTED`.
+            </summary>
+            <param name="name">The name of the operation resource to be deleted.</param>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.OperationsResource.DeleteRequest">
+            <summary>
+            Deletes a long-running operation. This method indicates that the client is no longer interested in the
+            operation result. It does not cancel the operation. If the server doesn't support this method, it returns
+            `google.rpc.Code.UNIMPLEMENTED`.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.DeleteRequest.Name">
+            <summary>The name of the operation resource to be deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.OperationsResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.OperationsResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.ProjectsResource">
+            <summary>The "projects" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.ProjectsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.Locations">
+            <summary>Gets the Locations resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource">
+            <summary>The "locations" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.Operations">
+            <summary>Gets the Operations resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource">
+            <summary>The "operations" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.Get(System.String)">
+            <summary>
+            Gets the latest state of a long-running operation. Clients can use this method to poll the operation
+            result at intervals as recommended by the API service.
+            </summary>
+            <param name="name">The name of the operation resource.</param>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.GetRequest">
+            <summary>
+            Gets the latest state of a long-running operation. Clients can use this method to poll the operation
+            result at intervals as recommended by the API service.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.GetRequest.Name">
+            <summary>The name of the operation resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.List(System.String)">
+            <summary>
+            Lists operations that match the specified filter in the request. If the server doesn't support this
+            method, it returns `UNIMPLEMENTED`.
+            </summary>
+            <param name="name">The name of the operation's parent resource.</param>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest">
+            <summary>
+            Lists operations that match the specified filter in the request. If the server doesn't support this
+            method, it returns `UNIMPLEMENTED`.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.Name">
+            <summary>The name of the operation's parent resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.Filter">
+            <summary>The standard list filter.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.PageSize">
+            <summary>The standard list page size.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.PageToken">
+            <summary>The standard list page token.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.OperationsResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudio(Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest,System.String)">
+            <summary>Synthesizes long form text asynchronously.</summary>
+            <param name="body">The body of the request.</param>
+            <param name="parent">The resource states of the request in the form of `projects/*/locations/*`.</param>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest">
+            <summary>Synthesizes long form text asynchronously.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest,System.String)">
+            <summary>Constructs a new SynthesizeLongAudio request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.Parent">
+            <summary>The resource states of the request in the form of `projects/*/locations/*`.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.ProjectsResource.LocationsResource.SynthesizeLongAudioRequest.InitParameters">
+            <summary>Initializes SynthesizeLongAudio parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.TextResource">
+            <summary>The "text" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.TextResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TextResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TextResource.Synthesize(Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest)">
+            <summary>
+            Synthesizes speech synchronously: receive results after all text input has been processed.
+            </summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest">
+            <summary>
+            Synthesizes speech synchronously: receive results after all text input has been processed.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest)">
+            <summary>Constructs a new Synthesize request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.TextResource.SynthesizeRequest.InitParameters">
+            <summary>Initializes Synthesize parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.VoicesResource">
+            <summary>The "voices" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.Texttospeech.v1.VoicesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.VoicesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.VoicesResource.List">
+            <summary>Returns a list of Voice supported for synthesis.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.VoicesResource.ListRequest">
+            <summary>Returns a list of Voice supported for synthesis.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.VoicesResource.ListRequest.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.VoicesResource.ListRequest.LanguageCode">
+            <summary>
+            Optional. Recommended. [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If not
+            specified, the API will return all supported voices. If specified, the ListVoices call will only return
+            voices that can be used to synthesize this language_code. For example, if you specify `"en-NZ"`, all
+            `"en-NZ"` voices will be returned. If you specify `"no"`, both `"no-\*"` (Norwegian) and `"nb-\*"`
+            (Norwegian Bokmal) voices will be returned.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.VoicesResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.VoicesResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.VoicesResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.Texttospeech.v1.VoicesResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.AdvancedVoiceOptions">
+            <summary>Used for advanced voice options.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AdvancedVoiceOptions.LowLatencyJourneySynthesis">
+            <summary>
+            Only for Journey voices. If false, the synthesis will be context aware and have higher latency.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AdvancedVoiceOptions.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.AudioConfig">
+            <summary>Description of audio data to be synthesized.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AudioConfig.AudioEncoding">
+            <summary>Required. The format of the audio byte stream.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AudioConfig.EffectsProfileId">
+            <summary>
+            Optional. Input only. An identifier which selects 'audio effects' profiles that are applied on (post
+            synthesized) text to speech. Effects are applied on top of each other in the order they are given. See
+            [audio profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for current supported profile
+            ids.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AudioConfig.Pitch">
+            <summary>
+            Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the
+            original pitch. -20 means decrease 20 semitones from the original pitch.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AudioConfig.SampleRateHertz">
+            <summary>
+            Optional. The synthesis sample rate (in hertz) for this audio. When this is specified in
+            SynthesizeSpeechRequest, if this is different from the voice's natural sample rate, then the synthesizer
+            will honor this request by converting to the desired sample rate (which might result in worse audio
+            quality), unless the specified sample rate is not supported for the encoding chosen, in which case it will
+            fail the request and return google.rpc.Code.INVALID_ARGUMENT.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AudioConfig.SpeakingRate">
+            <summary>
+            Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed
+            supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to
+            the native 1.0 speed. Any other values &amp;lt; 0.25 or &amp;gt; 4.0 will return an error.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AudioConfig.VolumeGainDb">
+            <summary>
+            Optional. Input only. Volume gain (in dB) of the normal native volume supported by the specific voice, in
+            the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal
+            amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal
+            amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal
+            amplitude. Strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness
+            for any value greater than that.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.AudioConfig.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.CancelOperationRequest">
+            <summary>The request message for Operations.CancelOperation.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CancelOperationRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.CustomPronunciationParams">
+            <summary>Pronunciation customization for a phrase.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomPronunciationParams.PhoneticEncoding">
+            <summary>The phonetic encoding of the phrase.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomPronunciationParams.Phrase">
+            <summary>
+            The phrase to which the customization will be applied. The phrase can be multiple words (in the case of
+            proper nouns etc), but should not span to a whole sentence.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomPronunciationParams.Pronunciation">
+            <summary>The pronunciation of the phrase. This must be in the phonetic encoding specified above.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomPronunciationParams.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.CustomPronunciations">
+            <summary>A collection of pronunciation customizations.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomPronunciations.Pronunciations">
+            <summary>The pronunciation customizations to be applied.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomPronunciations.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.CustomVoiceParams">
+            <summary>Description of the custom voice to be synthesized.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomVoiceParams.Model">
+            <summary>Required. The name of the AutoML model that synthesizes the custom voice.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomVoiceParams.ReportedUsage">
+            <summary>Optional. Deprecated. The usage of the synthesized audio to be reported.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.CustomVoiceParams.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.Empty">
+            <summary>
+            A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A typical
+            example is to use it as the request or the response type of an API method. For instance: service Foo { rpc
+            Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Empty.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata">
+            <summary>Metadata for response returned by the `SynthesizeLongAudio` method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.LastUpdateTimeRaw">
+            <summary>Deprecated. Do not use.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.LastUpdateTime">
+            <summary><seealso cref="T:System.Object"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.LastUpdateTimeRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.LastUpdateTimeDateTimeOffset">
+            <summary>
+            <seealso cref="T:System.DateTimeOffset"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.LastUpdateTimeRaw"/>.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.ProgressPercentage">
+            <summary>The progress of the most recent processing update in percentage, ie. 70.0%.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.StartTimeRaw">
+            <summary>Time when the request was received.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.StartTime">
+            <summary><seealso cref="T:System.Object"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.StartTimeRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.StartTimeDateTimeOffset">
+            <summary><seealso cref="T:System.DateTimeOffset"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.StartTimeRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.GoogleCloudTexttospeechV1SynthesizeLongAudioMetadata.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.ListOperationsResponse">
+            <summary>The response message for Operations.ListOperations.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.ListOperationsResponse.NextPageToken">
+            <summary>The standard List next-page token.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.ListOperationsResponse.Operations">
+            <summary>A list of operations that matches the specified filter in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.ListOperationsResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.ListVoicesResponse">
+            <summary>The message returned to the client by the `ListVoices` method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.ListVoicesResponse.Voices">
+            <summary>The list of voices.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.ListVoicesResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.MultiSpeakerMarkup">
+            <summary>A collection of turns for multi-speaker synthesis.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.MultiSpeakerMarkup.Turns">
+            <summary>Required. Speaker turns.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.MultiSpeakerMarkup.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.Operation">
+            <summary>This resource represents a long-running operation that is the result of a network API call.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Operation.Done">
+            <summary>
+            If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed,
+            and either `error` or `response` is available.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Operation.Error">
+            <summary>The error result of the operation in case of failure or cancellation.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Operation.Metadata">
+            <summary>
+            Service-specific metadata associated with the operation. It typically contains progress information and
+            common metadata such as create time. Some services might not provide such metadata. Any method that returns
+            a long-running operation should document the metadata type, if any.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Operation.Name">
+            <summary>
+            The server-assigned name, which is only unique within the same service that originally returns it. If you
+            use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Operation.Response">
+            <summary>
+            The normal, successful response of the operation. If the original method returns no data on success, such as
+            `Delete`, the response is `google.protobuf.Empty`. If the original method is standard
+            `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have
+            the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is
+            `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Operation.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.Status">
+            <summary>
+            The `Status` type defines a logical error model that is suitable for different programming environments,
+            including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains
+            three pieces of data: error code, error message, and error details. You can find out more about this error model
+            and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Status.Code">
+            <summary>The status code, which should be an enum value of google.rpc.Code.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Status.Details">
+            <summary>
+            A list of messages that carry the error details. There is a common set of message types for APIs to use.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Status.Message">
+            <summary>
+            A developer-facing error message, which should be in English. Any user-facing error message should be
+            localized and sent in the google.rpc.Status.details field, or localized by the client.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Status.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.SynthesisInput">
+            <summary>
+            Contains text input to be synthesized. Either `text` or `ssml` must be supplied. Supplying both or neither
+            returns google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000 bytes.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesisInput.CustomPronunciations">
+            <summary>
+            Optional. The pronunciation customizations to be applied to the input. If this is set, the input will be
+            synthesized using the given pronunciation customizations. The initial support will be for EFIGS (English,
+            French, Italian, German, Spanish) languages, as provided in VoiceSelectionParams. Journey and Instant Clone
+            voices are not supported yet. In order to customize the pronunciation of a phrase, there must be an exact
+            match of the phrase in the input types. If using SSML, the phrase must not be inside a phoneme tag (entirely
+            or partially).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesisInput.MultiSpeakerMarkup">
+            <summary>The multi-speaker input to be synthesized. Only applicable for multi-speaker synthesis.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesisInput.Ssml">
+            <summary>
+            The SSML document to be synthesized. The SSML document must be valid and well-formed. Otherwise the RPC will
+            fail and return google.rpc.Code.INVALID_ARGUMENT. For more information, see
+            [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesisInput.Text">
+            <summary>The raw text to be synthesized.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesisInput.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata">
+            <summary>Metadata for response returned by the `SynthesizeLongAudio` method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.LastUpdateTimeRaw">
+            <summary>Deprecated. Do not use.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.LastUpdateTime">
+            <summary><seealso cref="T:System.Object"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.LastUpdateTimeRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.LastUpdateTimeDateTimeOffset">
+            <summary>
+            <seealso cref="T:System.DateTimeOffset"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.LastUpdateTimeRaw"/>.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.ProgressPercentage">
+            <summary>The progress of the most recent processing update in percentage, ie. 70.0%.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.StartTimeRaw">
+            <summary>Time when the request was received.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.StartTime">
+            <summary><seealso cref="T:System.Object"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.StartTimeRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.StartTimeDateTimeOffset">
+            <summary><seealso cref="T:System.DateTimeOffset"/> representation of <see cref="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.StartTimeRaw"/>.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioMetadata.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest">
+            <summary>The top-level message sent by the client for the `SynthesizeLongAudio` method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest.AudioConfig">
+            <summary>Required. The configuration of the synthesized audio.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest.Input">
+            <summary>Required. The Synthesizer requires either plain text or SSML as input.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest.OutputGcsUri">
+            <summary>
+            Required. Specifies a Cloud Storage URI for the synthesis results. Must be specified in the format:
+            `gs://bucket_name/object_name`, and the bucket must already exist.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest.Voice">
+            <summary>Required. The desired voice of the synthesized audio.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeLongAudioRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest">
+            <summary>The top-level message sent by the client for the `SynthesizeSpeech` method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest.AdvancedVoiceOptions">
+            <summary>Advanced voice options.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest.AudioConfig">
+            <summary>Required. The configuration of the synthesized audio.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest.Input">
+            <summary>Required. The Synthesizer requires either plain text or SSML as input.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest.Voice">
+            <summary>Required. The desired voice of the synthesized audio.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechResponse">
+            <summary>The message returned to the client by the `SynthesizeSpeech` method.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechResponse.AudioContent">
+            <summary>
+            The audio data bytes encoded as specified in the request, including the header for encodings that are
+            wrapped in containers (e.g. MP3, OGG_OPUS). For LINEAR16 audio, we include the WAV header. Note: as with all
+            bytes fields, protobuffers use a pure binary representation, whereas JSON representations use base64.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.SynthesizeSpeechResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.Turn">
+            <summary>A Multi-speaker turn.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Turn.Speaker">
+            <summary>
+            Required. The speaker of the turn, for example, 'O' or 'Q'. Please refer to documentation for available
+            speakers.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Turn.Text">
+            <summary>Required. The text to speak.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Turn.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.Voice">
+            <summary>Description of a voice supported by the TTS service.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Voice.LanguageCodes">
+            <summary>
+            The languages that this voice supports, expressed as [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+            language tags (e.g. "en-US", "es-419", "cmn-tw").
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Voice.Name">
+            <summary>The name of this voice. Each distinct voice has a unique name.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Voice.NaturalSampleRateHertz">
+            <summary>The natural sample rate (in hertz) for this voice.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Voice.SsmlGender">
+            <summary>The gender of this voice.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.Voice.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.VoiceCloneParams">
+            <summary>The configuration of Voice Clone feature.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceCloneParams.VoiceCloningKey">
+            <summary>Required. Created by GenerateVoiceCloningKey.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceCloneParams.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.Texttospeech.v1.Data.VoiceSelectionParams">
+            <summary>Description of which voice to use for a synthesis request.</summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceSelectionParams.CustomVoice">
+            <summary>
+            The configuration for a custom voice. If [CustomVoiceParams.model] is set, the service will choose the
+            custom voice matching the specified configuration.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceSelectionParams.LanguageCode">
+            <summary>
+            Required. The language (and potentially also the region) of the voice expressed as a
+            [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g. "en-US". This should not include a
+            script tag (e.g. use "cmn-cn" rather than "cmn-Hant-cn"), because the script will be inferred from the input
+            provided in the SynthesisInput. The TTS service will use this parameter to help choose an appropriate voice.
+            Note that the TTS service may choose a voice with a slightly different language code than the one selected;
+            it may substitute a different region (e.g. using en-US rather than en-CA if there isn't a Canadian voice
+            available), or even a different language, e.g. using "nb" (Norwegian Bokmal) instead of "no" (Norwegian)".
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceSelectionParams.Name">
+            <summary>
+            The name of the voice. If both the name and the gender are not set, the service will choose a voice based on
+            the other parameters such as language_code.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceSelectionParams.SsmlGender">
+            <summary>
+            The preferred gender of the voice. If not set, the service will choose a voice based on the other parameters
+            such as language_code and name. Note that this is only a preference, not requirement; if a voice of the
+            appropriate gender is not available, the synthesizer should substitute a voice with a different gender
+            rather than failing the request.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceSelectionParams.VoiceClone">
+            <summary>
+            Optional. The configuration for a voice clone. If [VoiceCloneParams.voice_clone_key] is set, the service
+            will choose the voice clone matching the specified configuration.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Texttospeech.v1.Data.VoiceSelectionParams.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+    </members>
+</doc>
