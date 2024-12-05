@@ -16,7 +16,7 @@ public class DialogflowAgent : MonoBehaviour
     private const string location = "us-central1"; // e.g., "us-central1"
     private const string agentId = "099a192a-c879-4a51-a4c4-d8e58602e73f";
 
-    public static readonly string dificultad="dificil";//facil,intermedio o dificil
+    public static readonly string dificultad="intermedio";//facil,intermedio o dificil
     private bool isClientInitialized = false;
 
     private void Awake()
